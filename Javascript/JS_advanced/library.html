@@ -1,0 +1,63 @@
+<html>
+<script>
+    var _ = {
+        map: function (array, callback) {
+            let newArr = [];
+            for (let i = 0; i < array.length; i++){
+                let newVal = callback(array[i]);
+                newArr.push(newVal);
+            }
+            return newArr;
+        },
+        reduce: function (array, callback, memo) {
+            let val = memo || 0;
+            for (let i = 0; i < array.length; i++){
+                val = callback(val, array[i], i, array);
+            }
+            return val;
+        },
+        find: function (array, predicate) {
+            for (let i = 0; i < array.length; i++){
+                if (predicate(array[i])){
+                    return array[i];
+                }
+            }
+            return undefined;
+        },
+        filter: function (array, predicate) {
+            let newArr = [];
+            for (let i = 0; i < array.length; i++){
+                if (predicate(array[i])){
+                    newArr.push(array[i]);
+                }
+            }
+            return newArr;
+        },
+        reject: function (array, predicate) {
+            let newArr = [];
+            for (let i = 0; i < array.length; i++){
+                if (!predicate(array[i])){
+                    newArr.push(array[i]);
+                }
+            }
+            return newArr;
+        }
+    }
+    var evens = _.filter([1, 2, 3, 4, 5, 6], function (num) { return num % 2 == 0; });
+    console.log(evens); // if things are working right, this will return [2,4,6].
+
+    function add(a,b){
+        return a+b;
+    };
+
+    function equalsTwo(num){
+        if (num == 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    console.log(_.map([1,2,3], equalsTwo));
+</script>
+</html>

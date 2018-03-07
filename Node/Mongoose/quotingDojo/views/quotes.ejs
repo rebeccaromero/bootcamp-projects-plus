@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Here are the awesome quotes!</h2>
+            <% for(var i=0;i<quotes.length;i++){ %>
+                <p>"<%= quotes[i].quote %>"</p>
+                <p><%= quotes[i].name %> at <%= quotes[i].createdAt %></p>
+            <% } %>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Welcome to the Quoting Dojo!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to the Quoting Dojo</h1>
+            <form class="form-horizontal" action="/submit_quote" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" class="form-control" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="quote">Your quote:</label>
+                    <textarea class="form-control" rows="3" name="quote" id="quote"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">Add my quote!</button>
+            </form>
+            <form action="/quotes" method="GET">
+                <button type="submit" class="btn btn-default">Skip to my Lou!</button>
+            </form>
+        </div>
+    </body>
+</html>

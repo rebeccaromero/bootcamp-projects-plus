@@ -1,0 +1,25 @@
+<script>
+    function getMaxMinAvg(arr) {
+        var data = {
+            max: arr[0],
+            min: arr[0],
+            avg: 0
+        }
+        var sum = 0;
+
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            data.avg = sum / [i + 1];
+            if (arr[i] > data.max){
+                data.max = arr[i];
+            } else if (arr[i] < data.min) {
+                data.min = arr[i];
+            }
+        }
+        return data;
+    }
+
+    var x = [1, 5, 10, -2]
+
+    console.log(getMaxMinAvg(x));
+</script>

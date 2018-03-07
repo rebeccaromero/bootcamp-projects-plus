@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Meow</title>
+        <script src="node_modules/react/dist/react.js"></script>
+        <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    </head>
+    <body id="body">
+        <div></div>
+    </body>
+    <script>
+    const Title = (props) => {
+    const { text } = props;
+    return React.createElement('h1', null, text);
+    }
+    const App = (props) => {
+    return React.createElement('div', null,
+    React.createElement(Title, { text: 'Title one!' } ),
+    React.createElement(Title, { text: 'Title two!!' } ),
+    React.createElement(Title, { text: 'Title three!!!' } )
+    )
+    }
+    ReactDOM.render(Title, document.getElementById('body'));
+    ReactDOM.render(App, document.getElementById('body'));
+    ReactDOM.render({text}, document.getElementById('body'));
+    </script>
+</html>

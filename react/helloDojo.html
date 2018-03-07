@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Hello Dojo</title>
+        <script src="node_modules/react/dist/react.js"></script>
+        <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    </head>
+    <body>
+        <h1>Hello Dojo!</h1>
+        <h3>Things I need to do:</h3>
+        <ul id="list">
+            <div id="1"></div>
+            <div id="2"></div>
+            <div id="3"></div>
+            <div id="4"></div> 
+        </ul>
+    </body>
+    <script>
+        var item1 = React.createElement('li', null, 'Learn React' )
+        var item2 = React.createElement('li', null, 'Climb Mt. Everest' )
+        var item3 = React.createElement('li', null, 'Run a marathon' )
+        var item4 = React.createElement('li', null, 'Feed the kitties' )
+
+        ReactDOM.render(item1, document.getElementById('1'))
+        ReactDOM.render(item2, document.getElementById('2'))
+        ReactDOM.render(item3, document.getElementById('3'))
+        ReactDOM.render(item4, document.getElementById('4'))
+
+        // const items = ['Learn React', 'Climb Mt. Everest', 'Run a marathon', 'Feed the kitties'];
+        // const listItems = items.map((item) => <li>{item}</li> ); 
+        // ReactDOM.render(<ul>{listItems}</ul>, document.getElementById('list'))
+        // list.forEach(ReactDOM.render(list, document.getElementById('list'))
+        
+    </script>
+</html>

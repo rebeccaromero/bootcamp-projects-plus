@@ -1,0 +1,14 @@
+form{
+    padding: 10px;
+    width: 50%;
+    height: 75%;
+    border: 1px solid black;
+}
+
+.survey{
+    margin: 10px;
+}
+
+.comment{
+    height: 30%;
+}

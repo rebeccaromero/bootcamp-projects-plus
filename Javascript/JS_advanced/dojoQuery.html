@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Dojo Query Shtuff</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1 id="head">Pepper Cat</h1>
+        <p>Meow</p>
+        <p>Mrowrrr</p>
+        <button id="button">Make pepper speak!</button>
+    </body>
+    <script>
+        (function() {
+            function $Dojo() {
+                $Dojo("button").click(function() { 
+                    let button = document.getElementById("button");
+                    button.addEventListener("click", clickResult);
+                    function clickResult(){
+                        console.log("Mnoooowwwwrrr!")
+                    }; 
+                });
+            }();
+        });
+            // $Dojo("button").hover(function() { console.log("Your hand is hovering over pepper...she might cry!") });
+                    // button.addEventListener("hover", hoverResult)
+        
+    </script>
+</html>
+
+<!--SUPPOSED SOLUTION:
+    function $Dojo(id) {
+    this.myId = document.getElementById(id);
+    this.click = function (callback) {
+        this.myId.addEventListener("click", callback);
+    };
+
+    this.hover = function (hoverin, hoverout) {
+        this.myId.addEventListener("mouseover", hoverin);
+        this.myId.addEventListener("mouseout", hoverout);
+    };
+
+    return this;
+}-->

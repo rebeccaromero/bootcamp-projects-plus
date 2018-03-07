@@ -1,0 +1,38 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.box {
+    display: inline-block;
+    height: 100px; 
+    width: 100px; 
+    border: 1px solid black;
+    font-size: 0pt;
+}
+
+.game-board {
+    margin-left: 50%;
+    margin-top: 20px;
+    transform: translate(-50%);
+    width: 475px;
+    height: 350px;
+    font-size: 0pt;
+}
+
+.chosen {
+    background-color: lightskyblue;
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+.missed {
+    background-color: yellow;
+}
+

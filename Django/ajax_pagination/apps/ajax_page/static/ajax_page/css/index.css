@@ -1,0 +1,41 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 1000px;
+}
+
+form input {
+    margin: 0px 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 85%;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.pages {
+    display: block;
+    width: 90%;
+}
+
+.pages p {
+    display: inline-block;
+    color: blue;
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}

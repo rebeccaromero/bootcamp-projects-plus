@@ -1,0 +1,26 @@
+<script>
+    function getFibValue(index) {
+        let a = 1 
+        let b = 1
+        if (index > 1){
+            for (i = 1; i < index; i++){
+                nextNum = a + b
+                a = b;
+                b = nextNum
+                console.log(nextNum);
+            }
+            return nextNum
+        } else {
+            return index
+        }
+    }
+
+    console.log(getFibValue(2));
+
+    function fib(n){
+        if (n < 3){
+            return 1;
+        }
+        return fib(n-2) + fib(n-1);
+    }
+</script>

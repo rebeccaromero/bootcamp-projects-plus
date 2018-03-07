@@ -1,0 +1,13 @@
+<html>
+    <head></head>
+    <body>
+        <h1>COUNTER</h1>
+        <p>{{session['count']}} times</p>
+        <form action='/addTwo' method='post'>
+            <input type="submit" value="Add +2 to count">
+        </form>
+        <form action='/reset' method='post'>
+            <input type="submit" value="Reset">
+        </form>
+    </body>
+</html>

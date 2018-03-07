@@ -1,0 +1,16 @@
+<script>
+    var nums= [1, 3, 5, 7, 20]
+
+    function findAverage(arr){
+        var sum = 0;
+        for ( var i = 0; i < arr.length; i++){
+        sum += arr[i]
+        var average = (sum/ (i+1))
+
+        console.log(sum);
+        console.log(average);
+        }
+    }
+
+    console.log(findAverage(nums));
+</script>

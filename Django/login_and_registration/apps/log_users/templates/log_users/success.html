@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Login & Reg | Success</title>
+  </head>
+  <body>
+    <h1>Oh boy! Welcome </h1>
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+    <form action="/logout" method='post'>
+      {% csrf_token %}
+      <input type="submit" value='Logout'>
+    </form>
+  </body>
+</html>

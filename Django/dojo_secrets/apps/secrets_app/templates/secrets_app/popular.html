@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Dojo Secrets | Popular</title>
+</head>
+<body>
+    <h1>Most Popular Secrets...</h1>
+    <a href="http://localhost:8000/secrets">Back</a>
+    {% for secret in secrets %}
+        <p>{{ secret.content }} {{secret.created_at}}</p>
+        <p>{{ secret.like_count }} likes</p>
+        <form action="/like" method='post'>
+            {% csrf_token %}
+            <input type="hidden" name='user_id' value= {{ request.session.id }}>
+            <input type="hidden" name='secret_id' value= {{ secret.id }}>
+            <input type="submit" value='like'>
+        </form>
+        {% if secret.user.id == request.session.id %}
+            <form action="/delete" method='post'>
+                {% csrf_token %}
+                <input type="hidden" name='secret_id' value= {{ secret.id }}>
+                <input type="submit" value='Delete'>
+            </form>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

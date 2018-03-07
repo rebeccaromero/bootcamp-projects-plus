@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.head-top-bar {
+    background-color: peachpuff;
+    text-align: center;
+    height: 40px;
+    width: 100%;
+}
+
+.head-top-bar p {
+    display: inline-block;
+    padding: 7px 30px;
+}
+
+.head-main-bar {
+    background-color: rgb(50,120,195);
+    display: block;
+    /* position: "-webkit-sticky";   */
+    position: sticky;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    color: white;
+}
+
+.fa-search {
+    color: black;
+    float: right;
+}
+
+.departments-menu {
+    display: inline-block;
+}
+
+.departments-menu p {
+    font-size: 10pt;
+    display: inline-block;
+}
+
+.search-bar{
+    margin: 10px;
+    padding: 5px 10px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 25px;
+    width: 50%;
+}
+
+.search-bar input{
+    width: 300px;
+    border-radius: 25px;
+}
+
+.hmb-links {
+    display: inline-block;
+}
+
+.head-main-bar-links {
+    font-size: 8pt;
+    padding: 7px;
+    display: inline-block;
+}
+
+.head-under-bar {
+    display: inline-block;
+    background-color: peachpuff;
+    width: 100%;
+    height: 50px;
+}
+
+.scrolling-box {
+    background-color: yellow;
+    height: 300px;
+}
+
+.ship-pickup-bar {
+    width: 100%;
+    height: 96px;
+    padding: 25px;
+}
+
+.ship-pickup-options {
+    display: inline-block;
+    margin: 0 79px;
+}
+
+.ship-pickup-bar h1 {
+    font-size: 10pt;
+}
+
+.ship-pickup-bar p {
+    font-size: 7pt;
+}
+
+.featured-products {
+    background-color: rgb(245,245,245);
+    text-align: center;
+    margin: 25px;
+}
+
+.featured-product-card {
+    display: inline-block;
+    width: 168px;
+    height: 286px;
+    border: 1px solid lightslategray;
+}
+
+.departments-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.departments-container h1 {
+    font-size: 12pt;
+}
+
+.departments-container button {
+    margin: 25px;
+    padding: 10px 30px;
+    border: 1px solid rgb(9,39,81);
+}
+
+.departments-card {
+    display: inline-block;
+    width: 16%;
+    height: 226px;
+    color: rgb(9,39,81);
+    border: 1px solid lightgreen;
+}

@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 1440;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background-color: rgb(238, 238, 238);
+}
+
+.header-top-right {
+    text-align: right;
+    display: block;
+}
+
+.header-top-right a {
+    font-size: 14pt;
+    text-decoration: none;
+    color:rgb(0, 105, 161);
+    margin: 0 30px 0 0;
+}
+
+.us-flag{
+    height: 35px;
+    width: 42px;
+    vertical-align: top;
+}
+
+.fa-sort-down {
+    margin: 0 5px;
+}
+
+.costco-logo {
+    height: 110px;
+}
+
+.search-and-links {
+    display: inline-block;
+}
+
+.search-bar {
+    display: inline-block;
+    width: 600px;
+    margin: 20px;
+    border: 2px solid rgb(0, 105, 161);
+    background-color: white;
+}
+
+.search-bar p {
+    display: inline-block;
+    background-color: rgb(0, 105, 161);
+    color: white;
+    padding: 17px 17px 13px 17px;
+}
+
+.search-bar input {
+    width: 475px;
+    padding: 11px;
+    /* border-color: rgb(0, 105, 161); */
+    border: none;
+    display: inline-block;
+    font-size: 14pt;
+}
+
+.fa-search {
+    text-align: right;
+    color: rgb(0, 105, 161);
+}
+
+.header-links {
+    width: 300px;
+    margin: 25px 0;
+    background-color: grey;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.links {
+    display: inline-block;
+    color: rgb(0, 105, 161);
+    background-color: yellow;
+    margin: 0 10px;
+}
+
+.links i {
+    display: block;
+}
+
+.fa {
+    color: rgb(0, 105, 161);
+    text-align: center;
+}
+
+.header-links p {
+    display: inline-block;
+}
+
+.nav-bar {
+    width: 1410px;
+    height: 20px;
+    padding: 15px;
+    background-color: rgb(0, 105, 161);
+    display: inline-block;
+}
+
+.fa-navicon {
+    color: white;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14pt;
+    padding: 20px;
+
+}
+
+.scroll-imgs {
+    background-color: blue;
+    height: 300px;
+    width: 1398px;
+    margin: 0 20px;
+}

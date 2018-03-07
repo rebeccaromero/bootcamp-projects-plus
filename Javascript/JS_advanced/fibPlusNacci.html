@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Fib + Nacci</title>
+    </head>
+    <script>
+        function fib() {
+            var count = 0;
+            var countPlus = 1;
+            var sum = 0;
+            function nacci() {
+                console.log(countPlus);
+                sum = count + countPlus;
+                count = countPlus;
+                countPlus = sum;
+            }
+        return nacci;
+        }
+        var fibCounter = fib();
+        fibCounter() // should console.log "1"
+        fibCounter() // should console.log "1"
+        fibCounter() // should console.log "2"
+        fibCounter() // should console.log "3"
+        fibCounter() // should console.log "5"
+        fibCounter() // should console.log "8"
+        fibCounter() // should console.log "
+        fibCounter() // should console.log ""
+    </script>
+</html>

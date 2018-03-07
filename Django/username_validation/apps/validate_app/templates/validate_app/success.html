@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Username Success</title>
+    </head>
+    <body>
+        {% for message in messages%}
+            <h2>{{ message }}</h2>
+        {% endfor %}
+        <h2>Usernames Entered: </h2>
+        {% for user in users %}
+            <p>{{ user.username }}   {{ user.created_at }}</p>
+            <form action="/delete" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="username" value={{ user.username }}>
+                <input type="submit" value="delete">
+            </form>
+        {% endfor %}
+    </body>
+</html>

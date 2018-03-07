@@ -1,0 +1,22 @@
+<script>
+    function bubbleSort(arr) {
+        var sorted = false;
+        for (var j = 0; j < arr.length && !sorted; j++){
+            sorted = true;
+            for (var i = 0; i < arr.length - 1; i++){
+                if (arr[i] >= arr[i+1]){
+                    var x = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = x;
+                    sorted = false;
+                }
+            }
+        }
+        return arr;
+    }
+    var testData = [5, 26, 18, 43, 10, 12, 35, 6, 14, 100, 94, 62, 75, 14, 8];
+
+        var sorted = bubbleSort(testData);
+        console.log(sorted);
+
+</script>

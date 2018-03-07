@@ -1,0 +1,19 @@
+<html>  
+    <head>
+        <title>Mini Register</title>
+    </head>
+    <body>
+        <h1>Register:</h1>
+            <form action="{% url 'register_action' %}" method="POST">
+                {% csrf_token %}
+                {{ regForm.as_p }}
+                <input type="submit" value="REGISTER">
+            </form>
+        <h1>Login:</h1>
+            <form action="{% url 'login_action' %}" method="POST">
+                {% csrf_token %}
+                {{ loginForm.as_p }}
+                <input type="submit" value="LOGIN">
+            </form>
+    </body>
+</html>

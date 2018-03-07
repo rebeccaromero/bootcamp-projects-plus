@@ -1,0 +1,23 @@
+<html> 
+    <head>
+        <title>Django Notes</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'd_notes/css/index.css' %}" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'd_notes/javascript/index.js' %}"></script>
+    </head>
+    <body>
+        <h1>My Posts</h1>
+        <div class="notes">    
+        {% for note in notes %}
+            <p class="note">{{ note.content }}</p>
+        {% endfor %}
+        </div>
+        <h2>Add a note:</h2>
+        <form action="/add_note" method="POST">
+            {% csrf_token %}
+            <textarea rows="10" cols="35" name="content"></textarea>
+            <input type="submit" value="Post it!">
+        </form>
+    </body>
+</html>

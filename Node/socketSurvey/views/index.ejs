@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Survey Form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            $(document).ready(function (){
+                var socket  = io.connect();
+                $("form").submit(function(e){
+                    var data = $(this).serializeArray();
+                    console.log(data);
+                    e.preventDefault();
+                    socket.emit("posting_form", data);
+                });
+                socket.on("updated_message", function(message){
+                    $("form").before(message);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <div class="form-inline">
+                    <label for="name">Your Name:</label>
+                    <input type="text" class="form-control" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="location">Dojo Location:</label>
+                    <select class="form-control" name="location" id="location">
+                        <option>By the Sea</option>
+                        <option>Cold Misty Mountains</option>
+                        <option>Desert Region</option>
+                        <option>Forbidden Forest</option>
+                    </select>   
+                </div>
+                <div class="form-group">
+                    <label for="language">Favorite Language:</label>
+                    <select class="form-control" name="language" id="location">
+                        <option>JavaScript</option>
+                        <option>Python</option>
+                        <option>C++</option>
+                        <option>PHP</option>
+                    </select>   
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment (optional):</label>
+                    <textarea class="form-control" rows="3" name="comment" id="comment"></textarea>
+                </div>
+                <input type="submit" class="btn btn-primary" value="submit">
+            </form>
+        </div>
+    </body>
+</html>
+                   

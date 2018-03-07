@@ -1,0 +1,22 @@
+<html>
+    <header>    
+        <title>Hunting for Me</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </header>
+    <body>
+        <button id="button">Push to find yourself</button>
+    </body>
+    <script>
+        let button = document.getElementById("button");
+        button.addEventListener("click", clickResult);
+
+        function clickResult(){
+            $.get("https://api.github.com/users/rebeccaromero", displayName)
+            // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+            function displayName(data) {
+                console.log(data.login);
+                $("button").after("<p>", data.login, "</p>")
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,35 @@
+<script>
+    function makeChange(cents){
+        let dollars = 0;
+        let quarters = 0;
+        let dimes = 0;
+        let nickels = 0;
+        let pennies = 0;
+        if (cents >= 100){
+            dollars = Math.floor(cents/100);
+            cents = cents % 100;
+            console.log(dollars);
+        } 
+        if (cents >= 25){
+            quarters = Math.floor(cents/25);
+            cents = cents % 25;
+            console.log(cents);
+        }
+        if (cents >= 10){
+            dimes = Math.floor(cents/10);
+            cents = cents % 10;
+            console.log(cents);
+        }
+        if (cents >= 5){
+            nickels = Math.floor(cents/5);
+            cents = cents % 5;
+        }
+        if (cents >= 1){
+            pennies = cents/1;
+        }
+        let coins = {"dollars": dollars, "quarters": quarters, "dimes": dimes, "nickels": nickels, "pennies": pennies};
+        return coins
+    }
+
+    console.log(makeChange(387));
+</script>

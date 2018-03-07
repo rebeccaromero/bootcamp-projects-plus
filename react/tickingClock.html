@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Ticking Clock</title>
+        <script src="node_modules/react/dist/react.js"></script>
+        <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    </head>
+    <body>
+        <div id="time">
+        </div>
+    </body>
+    <script>
+        function getTime() {
+            var clock = React.createElement('p', null, 'The time is: ' + new Date().toLocaleTimeString())
+            ReactDOM.render(clock, document.getElementById('time'))
+        }
+        setInterval(function(){
+            getTime(), 1000
+        })
+    </script>
+</html>

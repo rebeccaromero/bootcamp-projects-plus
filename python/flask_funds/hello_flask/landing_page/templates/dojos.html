@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/landing_page.css') }}">
+    </head>
+    <body>
+        <h1>Ninja Form</h1>
+        <form>
+            <h3>Ninja Name: <input type="text" name="ninjaname" value="Choose cool ninja name"></h3>
+            <h3>Gender:</h3>
+            <input type="radio" name="gender" value="male" checked> Male</input>
+            <input type="radio" name="gender" value="female"> Female</input>
+            <input type="radio" name="gender" value="other"> Other</input><br>
+            <input class="submit" type="submit" value="I am ready to be better than a squirrel!">
+        </form>
+    </body>
+</html>

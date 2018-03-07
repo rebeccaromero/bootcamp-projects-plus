@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Submitted Survey</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Submitted Info</h1>
+            <div>
+                <p>Name: <%= data.name %> </p>
+            </div>
+            <div>
+                <p>Dojo Location: <%= data.location %> </p>
+            </div>
+            <div>
+                <p>Favorite Language: <%= data.language %> </p>
+            </div>
+            <div>
+                <p>Comment: <%= data.comment %> </p>
+            </div>
+            <form action="/go_back" method="POST">
+                <button type="submit" class="btn btn-primary">Go Back</button>
+            </form>
+        </div>
+    </body>
+</html>

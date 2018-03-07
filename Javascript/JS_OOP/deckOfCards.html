@@ -1,0 +1,102 @@
+<html>
+    <script>
+       class Deck {
+            constructor(cards) {
+                this.deck = cards;
+                this.origArr = cards;
+                this.discards = [];
+            }
+            shuffle(){
+                var array = this.deck
+                var m = array.length, t, i;
+                // While there remain elements to shuffle…
+                while (m) {
+                    // Pick a remaining element…
+                    i = Math.floor(Math.random() * m--);
+                    // And swap it with the current element.
+                    t = array[m];
+                    array[m] = array[i];
+                    array[i] = t;
+                }
+                return this.deck = array;
+            }
+            reset(){
+                console.log('Resetting');
+                console.log(cards[0]);
+                console.log(this.discards[0]);
+                let resetDeck = this.deck.concat(this.discards);
+                console.log(resetDeck.length);
+                this.deck = resetDeck;
+            }
+            deal(){
+                let cardsLeft = this.deck.length;
+                let luck = Math.floor(Math.random()*cardsLeft);
+                let card = this.deck[luck];
+                this.discards.push(this.deck[luck]);
+                this.deck.splice(luck, 1);
+                console.log(cardsLeft);
+                return card;
+            }
+       }
+
+        class Card {
+            constructor(suit, value){
+                this.suit = suit;
+                this.value = value;
+            }
+        };
+
+        class Player {
+            constructor(name){
+                this.name = name;
+                this.hand = [];
+            }
+            draw(){
+                let card = deck1.deal();
+                console.log(card);
+                this.hand.push(card);
+            }
+            discard(index){
+                this.hand.splice(index, 1);
+            }
+            showHand(){
+                for (let i = 0; i <this.hand.length; i++) {
+                    console.log(cardShark.hand[i])
+                }
+            }
+        }
+        let suits = ["spades", "clubs", "hearts", "diamonds"];
+        let values = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K" ];
+        let cards = [];
+        for (let i = 0; i < suits.length; i++){
+            for (let j = 0; j < values.length; j++){
+                let card = new Card(suits[i], values[j]);
+                cards.push(card);
+            }
+        
+        }
+        
+        let deck1 = new Deck(cards);
+
+        console.log(deck1.deal());
+        console.log(deck1.deal());
+        console.log(deck1.deck[0]);
+        deck1.shuffle();
+        console.log('Shuffle')
+        console.log(deck1.deck[0]);
+        deck1.reset();
+        console.log('Reset')
+        console.log(deck1.deck.length);
+        let cardShark = new Player('Georgina');
+        cardShark.draw();
+        cardShark.draw();
+        cardShark.draw();
+        cardShark.draw();
+        cardShark.draw();
+        console.log('HAND')
+        cardShark.showHand();
+        cardShark.discard(3);
+        console.log('DISCARDING')
+        cardShark.showHand();
+    </script>
+</html>

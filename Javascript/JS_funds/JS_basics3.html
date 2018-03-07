@@ -1,0 +1,48 @@
+<html>
+    <script>
+        function zeroNegativity(arr){
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] < 0){
+                    return false;
+                };
+            };
+            return true;
+        };
+
+        function isEven(num){
+            if(num % 2 == 0){
+                return true; 
+            };
+            return false;
+        };
+
+        function howManyEven(arr){
+            let count = 0
+            for(let i = 0; i < arr.length; i++){
+                if(isEven(arr[i])){
+                    count += 1
+                };
+            };
+            return count;
+        };
+
+        function createDummyArray(num){
+            let arr = [];
+            for(let i = 0; i < num; i++){
+                let dummyNum = Math.floor(Math.random()*9);
+                arr.push(dummyNum);
+            };
+            return arr;
+        };
+
+        function randomChoice(arr){
+            let i = Math.floor(Math.random()*arr.length);
+            return arr[i];
+        };
+
+        let x = [2, 3, 6, -8, 10, 11, 17, 20];
+        let y = [2, 4, 6, 8, 10, 26];
+
+        console.log(randomChoice(y));
+    </script>
+</html>

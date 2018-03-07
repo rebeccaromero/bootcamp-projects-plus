@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Javascript Group Chat</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            $(document).ready(function (){
+                var socket  = io.connect();
+                $("#cancel").click(function(e){
+                    e.preventDefault();
+                    $("#name-input").val("");
+                });
+                $("#ok").click(function(e){
+                    e.preventDefault();
+                    $("#main").toggle();
+                    $("#board").toggle();
+                    var name = $("input").val();
+                    socket.emit("submit_new_user", name);
+                    $('#username').val(name);
+                });
+                socket.on("server_response", function(messages){
+                    for (let i = 0; i < messages.length; i++) {
+                        $('.chat-board').append(messages[i]);
+                    };
+                });
+                $('#send').click(function(e){
+                    e.preventDefault();
+                    var name = $('#username').val();
+                    var message = $('#message-input').val();
+                    $('#message-input').val('');
+                    socket.emit('send_message', name, message);
+                });
+                socket.on("display_message", function(string){
+                    // console.log(message);
+                    $('.chat-board').append(string);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="main" class="main collapse in">
+                <h2>Join Chat Room:</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input id="name-input" type="text" class="form-control">
+                    </div>
+                    <button id="cancel">Cancel</button> <button id="ok" data-toggle="collapse">OK</button>
+                </form>
+            </div>
+            <div id="board" class="board collapse">
+                <h1>Conversation Board</h1>
+                <div class="chat-board">
+                </div>
+                <form>
+                    <div class="form-group">
+                        <input type="hidden" id="username" value="anonymouse">
+                        <input id="message-input" type="text" class="form-control" placeholder="enter your message here">
+                        <button id="send">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

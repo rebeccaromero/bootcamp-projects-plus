@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Leads Ajax Example</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'ajax_page/css/index.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="{% static 'ajax_page/js/index.js' %}"></script>
+    </head>
+    <body>
+        <div id="token">
+            {% csrf_token %}
+        </div>
+        <form action="/filter_by_name" method="POST">
+            {% csrf_token %}
+            Name: <input id="name-filter" type="text" name="name_filter">
+            From: <input id="from-date" type="date" name="from">
+            Up To: <input id="up-to-date" type="date" name="up_to">
+        </form>
+        <div class="pages">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+        </div>
+        <div class="table">
+            <table id="t1">
+                <tr>
+                    <th>leads_id</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>registered datetime</th>
+                    <th>email</th>
+                </tr>
+                {% for lead in table1 %}
+                <tr>
+                    <th>{{lead.id}}</th>
+                    <th>{{lead.first_name}}</th>
+                    <th>{{lead.last_name}}</th>
+                    <th>{{lead.created_at}}</th>
+                    <th>{{lead.email}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="t2" class="hidden">
+                <tr>
+                    <th>leads_id</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>registered datetime</th>
+                    <th>email</th>
+                </tr>
+                {% for lead in table2 %}
+                <tr>
+                    <th>{{lead.id}}</th>
+                    <th>{{lead.first_name}}</th>
+                    <th>{{lead.last_name}}</th>
+                    <th>{{lead.created_at}}</th>
+                    <th>{{lead.email}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="t3" class="hidden">
+                <tr>
+                    <th>leads_id</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>registered datetime</th>
+                    <th>email</th>
+                </tr>
+                {% for lead in table3 %}
+                <tr>
+                    <th>{{lead.id}}</th>
+                    <th>{{lead.first_name}}</th>
+                    <th>{{lead.last_name}}</th>
+                    <th>{{lead.created_at}}</th>
+                    <th>{{lead.email}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+            <table id="t4" class="hidden">
+                <tr>
+                    <th>leads_id</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>registered datetime</th>
+                    <th>email</th>
+                </tr>
+                {% for lead in table4 %}
+                <tr>
+                    <th>{{lead.id}}</th>
+                    <th>{{lead.first_name}}</th>
+                    <th>{{lead.last_name}}</th>
+                    <th>{{lead.created_at}}</th>
+                    <th>{{lead.email}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
